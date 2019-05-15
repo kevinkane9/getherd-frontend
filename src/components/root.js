@@ -70,13 +70,30 @@ const StyledPaper = styled(Paper)`
     align-items: center;
 `;
 
+const StyledMenuItem = styled.div`
+    @media (max-width: 800px) {
+        button {
+            min-width: 30px;
+            padding: 6px 6px;
+            font-size: 13px;
+        }
+    }
+    @media (max-width: 660px) {
+        button {
+            min-width: 20px;
+            padding: 6px 4px;
+            font-size: 12px;
+        }
+    }
+`;
+
 function CenteredGrid(props) {
     const { classes } = props;
     return (
         <div className={classes.root}>
             <Grid container spacing={24} className={classes.grid}>
                 <Hidden xsDown>
-                   <Grid item xs={2} sm={3}>
+                   <Grid item xs={2} sm={2}>
                        <Paper className={classes.paper}>
                            <Logo />
                        </Paper>
@@ -91,18 +108,18 @@ function CenteredGrid(props) {
                         </Paper>
                     </Grid>
                 </Hidden>
-                <Grid item xs={2} sm={5} md={4}>
+                <Grid item xs={2} sm={4} md={4}>
                     <Paper className={classes.paper}>
                         <OutlinedChips />
                     </Paper>
                 </Grid>
-                <Grid item xs={8} sm={4} md={5}>
+                <Grid item xs={8} sm={6} md={5}>
                     <StyledPaper className={classes.paper}>
-                        <Hidden smDown>
-                          <HomeItem />
-                          <AnnouncementsItem />
-                          <IdeasItem />
-                          <MyvoiceItem />
+                        <Hidden xsDown>
+                          <StyledMenuItem><HomeItem /></StyledMenuItem>
+                          <StyledMenuItem><AnnouncementsItem /></StyledMenuItem>
+                          <StyledMenuItem><IdeasItem /></StyledMenuItem>
+                          <StyledMenuItem><MyvoiceItem /></StyledMenuItem>
                         </Hidden>
                         <ImageAvatars/>
                         <img className={classes.fon} src={Fon}/>

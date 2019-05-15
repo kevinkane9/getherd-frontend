@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { withStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
@@ -68,16 +69,32 @@ function handleClick() {
     alert('You clicked the Chip.'); // eslint-disable-line no-alert
 }
 
+const StyledSwicherContainer = styled.div`
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @media (max-width: 800px) {
+        p {
+            font-size: 12px;
+        }
+        img {
+            width: 20px;
+            height: 19px;
+            margin: 7px 6px;
+        }
+    }
+`;
+
 function OutlinedChips(props) {
     const { classes } = props;
     return (
         <div className={classes.root}>
             <Hidden xsDown>
-                <div className={classes.desc}>
+                <StyledSwicherContainer className={classes.desc}>
                     <img className={classes.image} src={Fedora}/>
                     <p>Go Incognito</p>
                     <Switch/>
-                </div>
+                </StyledSwicherContainer>
             </Hidden>
             <Hidden only={['sm','md','lg','xl']}>
                 <div className={classes.mob}>
