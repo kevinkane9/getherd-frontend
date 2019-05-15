@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -62,20 +63,27 @@ const styles = theme => ({
         color: '#fff',
     }
 });
+
+const StyledPaper = styled(Paper)`
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+`;
+
 function CenteredGrid(props) {
     const { classes } = props;
     return (
         <div className={classes.root}>
             <Grid container spacing={24} className={classes.grid}>
                 <Hidden xsDown>
-                   <Grid item xs={12} sm={5}>
+                   <Grid item xs={2} sm={3}>
                        <Paper className={classes.paper}>
                            <Logo />
                        </Paper>
                    </Grid>
                 </Hidden>
                 <Hidden only={['sm','md','lg','xl']}>
-                    <Grid item xs={2} >
+                    <Grid item xs={2}>
                         <Paper className={classes.paper}>
                             <IconButton color="inherit" aria-label="Menu">
                                 <MenuIcon className={classes.menu} />
@@ -83,13 +91,13 @@ function CenteredGrid(props) {
                         </Paper>
                     </Grid>
                 </Hidden>
-                <Grid item xs={8} sm={2}>
+                <Grid item xs={2} sm={5} md={4}>
                     <Paper className={classes.paper}>
                         <OutlinedChips />
                     </Paper>
                 </Grid>
-                <Grid item xs={2} sm={5}>
-                    <Paper className={classes.paper}>
+                <Grid item xs={8} sm={4} md={5}>
+                    <StyledPaper className={classes.paper}>
                         <Hidden smDown>
                           <HomeItem />
                           <AnnouncementsItem />
@@ -98,7 +106,7 @@ function CenteredGrid(props) {
                         </Hidden>
                         <ImageAvatars/>
                         <img className={classes.fon} src={Fon}/>
-                    </Paper>
+                    </StyledPaper>
                 </Grid>
             </Grid>
             <Grid container spacing={24} className={classes.grid}>

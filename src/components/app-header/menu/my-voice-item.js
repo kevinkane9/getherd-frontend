@@ -19,7 +19,8 @@ const styles = theme => ({
         marginRight: theme.spacing.unit * 2,
     },
     button: {
-        textTransform: 'none'
+        textTransform: 'none',
+        whiteSpace: 'nowrap'
     }
 });
 
