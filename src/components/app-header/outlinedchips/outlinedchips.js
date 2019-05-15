@@ -41,7 +41,8 @@ const styles = theme => ({
         display: 'flex',
         justifyContent: 'center',
         flexWrap: 'wrap',
-        border: '1px solid',
+        border: '1px solid #020241',
+        color: '#020241',
         borderRadius: '25px',
         margin: '5px auto',
     },
@@ -100,7 +101,7 @@ function OutlinedChips(props) {
                 <div className={classes.mob}>
                     <img className={classes.image} src={Fedora}/>
                     <p className={classes.p}>Go Incognito</p>
-                    <Switch/>
+                    <Switch  color="primary"/>
                 </div>
             </Hidden>
         </div>

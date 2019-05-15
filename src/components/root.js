@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
@@ -16,6 +17,7 @@ import ImageAvatars from './app-header/avatar/avatar';
 import OutlinedChips from './app-header/outlinedchips/outlinedchips';
 import Fon from './img/headerfon.png';
 import Row from './img/row.png';
+import { Theme } from '../Theme';
 
 import BanerText from './app-baner/banerText';
 import BanerMobile from './app-baner-mobile/banermobile';
@@ -90,6 +92,7 @@ const StyledMenuItem = styled.div`
 function CenteredGrid(props) {
     const { classes } = props;
     return (
+        <MuiThemeProvider theme={Theme}>
         <div className={classes.root}>
             <Grid container spacing={24} className={classes.grid}>
                 <Hidden xsDown>
@@ -190,6 +193,7 @@ function CenteredGrid(props) {
                 </Hidden>
             </Grid>
         </div>
+        </MuiThemeProvider>
     );
 }
 
