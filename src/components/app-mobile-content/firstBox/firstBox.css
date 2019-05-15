@@ -1,0 +1,14 @@
+#oval-left, #oval-right {
+    width: 250px;
+    position: absolute;
+    height: 100px;
+    top: 170px;
+    background: #fd7313;
+    z-index: -1;
+    -moz-border-radius: 100px / 50px;
+    -webkit-border-radius: 100px / 50px;
+    border-radius: 100px / 30px;
+}
+#oval-right{
+    right: 0px;
+}
