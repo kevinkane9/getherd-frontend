@@ -4,18 +4,18 @@ import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import image from '../firstImage.png';
 
 const StyledGrid = styled(Grid)`
   height: 80px;
-  padding-top: 16px;
-  margin-left: 30px;
-  padding-left: 20px;
-  margin-right: 30px;
-  padding-right: 20px;
-  padding-bottom: 16px;
   a {
     text-decoration: none;
+    p {
+      font-size: 12px;
+    }
+    h1 {
+      font-size: 22px;
+      font-weight: 500;
+    }
   }
 `
 
@@ -23,6 +23,8 @@ export const MobileContentBox = ({ title, description, image }) => {
   const Container = styled(Paper)`
     background: url(${image}) no-repeat right;
     background-size: contain;
+    margin: 0px 30px;
+    padding: 20px 16px;
   `
   return (
     <Container elevation={1}>
