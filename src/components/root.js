@@ -26,7 +26,7 @@ import LeftBox from './app-content/leftBox/leftBox';
 import CenterBox from './app-content/centerBox/centerBox';
 import RightBox from './app-content/rightBox/rightBox';
 
-import FirstBox from './app-mobile-content/firstBox/firstBox';
+import { MobileContentBox } from './MobileContent/MobileContentBox';
 import SecondBox from './app-mobile-content/secondBox/secondBox';
 import ThirdBox from './app-mobile-content/thirdBox/thirdBox';
 import LabelBottomNavigation from './app-mobile-content/bottom-navigation/bottom-navigation';
@@ -186,7 +186,10 @@ function CenteredGrid(props) {
                 </Hidden>
                 <Hidden only={['sm','md','lg','xl']}>
                     <Grid item xs={12}>
-                        <FirstBox />
+                        <MobileContentBox
+                            title="Celebrate"
+                            description="Let us know if there is something to celebrate."
+                        />
                     </Grid>
                     <Grid item xs={12}>
                         <SecondBox />
