@@ -26,9 +26,7 @@ import LeftBox from './app-content/leftBox/leftBox';
 import CenterBox from './app-content/centerBox/centerBox';
 import RightBox from './app-content/rightBox/rightBox';
 
-import FirstBox from './app-mobile-content/firstBox/firstBox';
-import SecondBox from './app-mobile-content/secondBox/secondBox';
-import ThirdBox from './app-mobile-content/thirdBox/thirdBox';
+import { MobileContent } from './MobileContent';
 import LabelBottomNavigation from './app-mobile-content/bottom-navigation/bottom-navigation';
 
 const styles = theme => ({
@@ -103,6 +101,12 @@ const StyledPaperMobile = styled(Paper)`
     @media (max-width: 600px) {
         padding-top: 0px !important;
     }
+`;
+
+const StickedBottom = styled.div`
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
 `;
 
 function CenteredGrid(props) {
@@ -185,15 +189,7 @@ function CenteredGrid(props) {
                 </Grid>
                 </Hidden>
                 <Hidden only={['sm','md','lg','xl']}>
-                    <Grid item xs={12}>
-                        <FirstBox />
-                    </Grid>
-                    <Grid item xs={12}>
-                        <SecondBox />
-                    </Grid>
-                    <Grid item xs={12}>
-                        <ThirdBox />
-                    </Grid>
+                    <MobileContent />
                 </Hidden>
             </Grid>
             <Grid container spacing={24}>
@@ -204,12 +200,12 @@ function CenteredGrid(props) {
                     </Paper>
                 </Grid>
                 </Hidden>
-                <Hidden only={['sm','md','lg','xl']}>
-                    <Grid item xs={12} sm={12}>
-                        <LabelBottomNavigation/>
-                    </Grid>
-                </Hidden>
             </Grid>
+            <Hidden only={['sm','md','lg','xl']}>
+                <StickedBottom>
+                    <LabelBottomNavigation/>
+                </StickedBottom>
+            </Hidden>
         </div>
         </MuiThemeProvider>
     );
