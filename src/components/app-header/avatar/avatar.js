@@ -14,8 +14,8 @@ const styles  = theme => ({
     avatarMob: {
         [theme.breakpoints.only('xs')]: {
             margin: 10,
-            width: 50,
-            height: 50,
+            width: 35,
+            height: 35,
             marginLeft: -40,
         },
     }

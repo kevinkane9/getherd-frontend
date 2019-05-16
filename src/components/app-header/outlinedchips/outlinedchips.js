@@ -49,7 +49,6 @@ const styles = theme => ({
     mob:{
         display: 'flex',
         justifyContent: 'center',
-        flexWrap: 'wrap',
         border: '1px solid #fc8736',
         background: '#fc8736',
         borderRadius: '25px',
@@ -86,6 +85,25 @@ const StyledSwicherContainer = styled.div`
     }
 `;
 
+const StyledSwicherMobContainer = styled.div`
+    display: flex;
+    align-items: center;
+    padding: 0px 15px;
+    height: 40px;
+    p {
+        font-size: 12px;
+        opacity: 0.7;
+    }
+    img {
+        width: 17px;
+        height: 16px;
+        margin: 7px 6px;
+    }
+    
+`;
+
+
+
 function OutlinedChips(props) {
     const { classes } = props;
     return (
@@ -98,11 +116,11 @@ function OutlinedChips(props) {
                 </StyledSwicherContainer>
             </Hidden>
             <Hidden only={['sm','md','lg','xl']}>
-                <div className={classes.mob}>
+                <StyledSwicherMobContainer className={classes.mob}>
                     <img className={classes.image} src={Fedora}/>
                     <p className={classes.p}>Go Incognito</p>
                     <Switch  color="primary"/>
-                </div>
+                </StyledSwicherMobContainer>
             </Hidden>
         </div>
     );

@@ -1,8 +1,8 @@
 #oval-left, #oval-right {
-    width: 250px;
+    width: 270px;
     position: absolute;
     height: 100px;
-    top: 170px;
+    top: 100px;
     background: #fd7313;
     z-index: -1;
     -moz-border-radius: 100px / 50px;

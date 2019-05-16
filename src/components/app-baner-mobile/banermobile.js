@@ -6,7 +6,7 @@ const BanerMobile = () => {
     return(
         <div className="banermobile">
          <Typography variant="h4">
-            My voice
+            My Voice
          </Typography>
         </div>
     );

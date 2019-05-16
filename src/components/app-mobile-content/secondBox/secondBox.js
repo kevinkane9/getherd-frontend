@@ -17,14 +17,19 @@ const styles = theme => ({
         marginLeft: '30px',
         marginRight: '30px',
         background: `url(`+SecondImage+`) no-repeat right`,
-        height: '170px',
+        height: '115px',
+        backgroundSize: 'contain',
     },
     link: {
         textDecoration: 'none',
     },
     h1:{
-        fontSize: '45px',
-    }
+        fontSize: '30px',
+        fontWeight: 500,
+    },
+    p: {
+        fontSize: '12px',
+    },
 });
 
 function SecondBox(props) {
@@ -38,7 +43,7 @@ function SecondBox(props) {
                      <Typography variant="h5" component="h1" className={classes.h1}>
                          Ideas
                      </Typography>
-                     <Typography component="p">
+                     <Typography component="p" className={classes.p}>
                          Share your ideas with us.
                      </Typography>
                    </a>

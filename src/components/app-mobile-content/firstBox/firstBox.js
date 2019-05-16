@@ -18,14 +18,19 @@ const styles = theme => ({
         marginRight: '30px',
         backgroundColor: '#fff',
         background: `url(`+FirstImage+`) no-repeat right`,
-        height: '170px',
+        height: '115px',
+        backgroundSize: 'contain',
     },
     link: {
         textDecoration: 'none',
     },
     h1:{
-       fontSize: '45px',
-    }
+        fontSize: '30px',
+        fontWeight: 500,
+    },
+    p: {
+        fontSize: '12px',
+    },
 });
 
 function FirstBox(props) {
@@ -41,7 +46,7 @@ function FirstBox(props) {
                       <Typography variant="h5" component="h1" className={classes.h1}>
                           Celebrate
                       </Typography>
-                      <Typography component="p">
+                      <Typography component="p" className={classes.p}>
                           Let us know if there is someshing to selebrate.
                       </Typography>
                    </a>

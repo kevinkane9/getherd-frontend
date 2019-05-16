@@ -89,6 +89,22 @@ const StyledMenuItem = styled.div`
     }
 `;
 
+const StyledMobileTitle = styled(Grid)`
+    padding-top: 0px !important;
+`;
+
+const StyledGrid = styled(Grid)`
+    @media (max-width: 600px) {
+        padding-top: 0px !important;
+    }
+`;
+
+const StyledPaperMobile = styled(Paper)`
+    @media (max-width: 600px) {
+        padding-top: 0px !important;
+    }
+`;
+
 function CenteredGrid(props) {
     const { classes } = props;
     return (
@@ -96,27 +112,27 @@ function CenteredGrid(props) {
         <div className={classes.root}>
             <Grid container spacing={24} className={classes.grid}>
                 <Hidden xsDown>
-                   <Grid item xs={2} sm={2}>
+                   <Grid item xs={2} sm={2} md={3}>
                        <Paper className={classes.paper}>
                            <Logo />
                        </Paper>
                    </Grid>
                 </Hidden>
                 <Hidden only={['sm','md','lg','xl']}>
-                    <Grid item xs={2}>
+                    <StyledGrid item xs={2}>
                         <Paper className={classes.paper}>
                             <IconButton color="inherit" aria-label="Menu">
                                 <MenuIcon className={classes.menu} />
                             </IconButton>
                         </Paper>
-                    </Grid>
+                    </StyledGrid>
                 </Hidden>
-                <Grid item xs={2} sm={4} md={4}>
+                <StyledGrid item xs={8} sm={4} md={4}>
                     <Paper className={classes.paper}>
                         <OutlinedChips />
                     </Paper>
-                </Grid>
-                <Grid item xs={8} sm={6} md={5}>
+                </StyledGrid>
+                <StyledGrid item xs={2} sm={6} md={5}>
                     <StyledPaper className={classes.paper}>
                         <Hidden xsDown>
                           <StyledMenuItem><HomeItem /></StyledMenuItem>
@@ -127,27 +143,29 @@ function CenteredGrid(props) {
                         <ImageAvatars/>
                         <img className={classes.fon} src={Fon}/>
                     </StyledPaper>
-                </Grid>
+                </StyledGrid>
             </Grid>
-            <Grid container spacing={24} className={classes.grid}>
-                <Grid item xs={12} sm={4}>
-                    <Hidden xsDown>
+            <Hidden xsDown>
+                <Grid container spacing={24} className={classes.grid}>
+                    <Grid item xs={12} sm={4}>
                         <Paper className={classes.paper}>
                             <BanerText/>
                         </Paper>
-                    </Hidden>
-                    <Hidden only={['sm','md','lg','xl']}>
-                        <Paper className={classes.paper}>
-                            <BanerMobile/>
-                        </Paper>
-                    </Hidden>
-                </Grid>
-                <Hidden xsDown>
-                   <Grid item xs={12} sm={8}>
+                    </Grid>
+                    <Grid item xs={12} sm={8}>
                        <Paper className={classes.paper}></Paper>
                    </Grid>
-                </Hidden>
-            </Grid>
+                </Grid>
+            </Hidden>
+            <Hidden only={['sm','md','lg','xl']}>
+                <StyledMobileTitle container spacing={24} className={classes.grid}>
+                    <StyledMobileTitle item xs={12} sm={4}>
+                        <StyledPaperMobile className={classes.paper}>
+                            <BanerMobile/>
+                        </StyledPaperMobile>
+                    </StyledMobileTitle>
+                </StyledMobileTitle>
+            </Hidden>
             <Grid container spacing={24}>
                 <Hidden xsDown>
                 <Grid item xs={12} sm={4}>

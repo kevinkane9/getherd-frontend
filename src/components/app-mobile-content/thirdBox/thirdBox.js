@@ -18,14 +18,19 @@ const styles = theme => ({
         marginRight: '30px',
         marginBottom: '100px',
         background: `url(`+ThirdImage+`) no-repeat right`,
-        height: '170px',
+        height: '115px',
+        backgroundSize: 'contain',
     },
     link: {
         textDecoration: 'none',
     },
     h1:{
-        fontSize: '45px',
-    }
+        fontSize: '30px',
+        fontWeight: 500,
+    },
+    p: {
+        fontSize: '12px',
+    },
 });
 
 function ThirdBox(props) {
@@ -39,7 +44,7 @@ function ThirdBox(props) {
                      <Typography variant="h5" component="h1" className={classes.h1}>
                          Concerns
                      </Typography>
-                     <Typography component="p">
+                     <Typography component="p" className={classes.p}>
                          Share your concerns with us.
                      </Typography>
                    </a>

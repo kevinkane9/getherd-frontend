@@ -4,4 +4,7 @@
 .banermobile h4{
     color: #fff;
     margin: 0;
+    font-size: 1.8rem;
+    letter-spacing: 1.3px;
+    opacity: 0.9;
 }
