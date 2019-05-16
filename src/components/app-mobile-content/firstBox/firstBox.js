@@ -18,18 +18,18 @@ const styles = theme => ({
         marginRight: '30px',
         backgroundColor: '#fff',
         background: `url(`+FirstImage+`) no-repeat right`,
-        height: '115px',
+        height: '80px',
         backgroundSize: 'contain',
     },
     link: {
         textDecoration: 'none',
     },
     h1:{
-        fontSize: '30px',
+        fontSize: '22px',
         fontWeight: 500,
     },
     p: {
-        fontSize: '12px',
+        fontSize: '10px',
     },
 });
 
