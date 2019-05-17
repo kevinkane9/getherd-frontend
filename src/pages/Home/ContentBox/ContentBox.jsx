@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
 
 const StyledGrid = styled(Grid)`
   height: 80px;
@@ -36,7 +37,7 @@ const StyledGrid = styled(Grid)`
   }
 `
 
-export const ContentBox = ({ title, description, image, imageMobile }) => {
+export const ContentBox = ({ title, description, image, imageMobile, link }) => {
   const Container = styled(Paper)`
     background: url(${image}) no-repeat right;
     background-size: contain;
@@ -66,14 +67,14 @@ export const ContentBox = ({ title, description, image, imageMobile }) => {
   return (
     <Container elevation={1}>
       <StyledGrid item xs={6} sm={12}>
-        <a href="/">
+        <Link to={link}>
           <Typography variant="h5" component="h1" >
             {title}
           </Typography>
           <Typography component="p">
             {description}
           </Typography>
-        </a>
+        </Link>
       </StyledGrid>
     </Container>
   )
@@ -84,5 +85,6 @@ ContentBox.propTypes = {
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   imageMobile: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
 }
 

@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import Logo from './app-header/logo/logo';
+import { Logo } from '../components/Logo';
 import HomeItem from './app-header/menu/home-item';
 import AnnouncementsItem from './app-header/menu/announcements';
 import IdeasItem from './app-header/menu/ideas-item';
@@ -16,13 +16,10 @@ import MyvoiceItem from './app-header/menu/my-voice-item';
 import ImageAvatars from './app-header/avatar/avatar';
 import OutlinedChips from './app-header/outlinedchips/outlinedchips';
 import Fon from './img/headerfon.png';
-import Row from './img/row.png';
 import { Theme } from '../Theme';
 
-import BanerText from './app-baner/banerText';
-import BanerMobile from './app-baner-mobile/banermobile';
-import { Content } from './Content';
 import LabelBottomNavigation from './app-mobile-content/bottom-navigation/bottom-navigation';
+import { Routes } from './Routes';
 
 const styles = theme => ({
     root: {
@@ -59,12 +56,6 @@ const styles = theme => ({
     }
 });
 
-const StyledRow = styled.div`
-    position: fixed;
-    bottom: 15px;
-    width: 100%;
-    text-align: center;
-`;
 
 const StyledPaper = styled(Paper)`
     display: flex;
@@ -89,21 +80,12 @@ const StyledMenuItem = styled.div`
     }
 `;
 
-const StyledMobileTitle = styled(Grid)`
-    padding-top: 0px !important;
-`;
-
 const StyledGrid = styled(Grid)`
     @media (max-width: 600px) {
         padding-top: 0px !important;
     }
 `;
 
-const StyledPaperMobile = styled(Paper)`
-    @media (max-width: 600px) {
-        padding-top: 0px !important;
-    }
-`;
 
 const StickedBottom = styled.div`
     position: fixed;
@@ -151,35 +133,7 @@ function CenteredGrid(props) {
                     </StyledPaper>
                 </StyledGrid>
             </Grid>
-            <Hidden xsDown>
-                <Grid container spacing={24} className={classes.grid}>
-                    <Grid item xs={12} sm={4}>
-                        <Paper className={classes.paper}>
-                            <BanerText/>
-                        </Paper>
-                    </Grid>
-                    <Grid item xs={12} sm={8}>
-                       <Paper className={classes.paper}></Paper>
-                   </Grid>
-                </Grid>
-            </Hidden>
-            <Hidden only={['sm','md','lg','xl']}>
-                <StyledMobileTitle container spacing={24} className={classes.grid}>
-                    <StyledMobileTitle item xs={12} sm={4}>
-                        <StyledPaperMobile className={classes.paper}>
-                            <BanerMobile/>
-                        </StyledPaperMobile>
-                    </StyledMobileTitle>
-                </StyledMobileTitle>
-            </Hidden>
-            <Grid container spacing={24}>
-                <Content />
-            </Grid>
-            <Hidden xsDown>
-                <StyledRow>
-                    <img src={Row} />
-                </StyledRow>
-            </Hidden>
+            <Routes />
             <Hidden only={['sm','md','lg','xl']}>
                 <StickedBottom>
                     <LabelBottomNavigation/>

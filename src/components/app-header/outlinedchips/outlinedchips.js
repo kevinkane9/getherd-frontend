@@ -103,8 +103,6 @@ const StyledSwicherMobContainer = styled.div`
     
 `;
 
-
-
 function OutlinedChips(props) {
     const { classes } = props;
     return (
