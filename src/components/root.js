@@ -21,12 +21,7 @@ import { Theme } from '../Theme';
 
 import BanerText from './app-baner/banerText';
 import BanerMobile from './app-baner-mobile/banermobile';
-
-import LeftBox from './app-content/leftBox/leftBox';
-import CenterBox from './app-content/centerBox/centerBox';
-import RightBox from './app-content/rightBox/rightBox';
-
-import { MobileContent } from './MobileContent';
+import { Content } from './Content';
 import LabelBottomNavigation from './app-mobile-content/bottom-navigation/bottom-navigation';
 
 const styles = theme => ({
@@ -63,6 +58,13 @@ const styles = theme => ({
         color: '#fff',
     }
 });
+
+const StyledRow = styled.div`
+    position: fixed;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+`;
 
 const StyledPaper = styled(Paper)`
     display: flex;
@@ -171,36 +173,13 @@ function CenteredGrid(props) {
                 </StyledMobileTitle>
             </Hidden>
             <Grid container spacing={24}>
-                <Hidden xsDown>
-                <Grid item xs={12} sm={4}>
-                    <Paper className={classes.paper}>
-                        <LeftBox />
-                    </Paper>
-                </Grid>
-                <Grid item xs={12} sm={4}>
-                    <Paper className={classes.paper}>
-                        <CenterBox />
-                    </Paper>
-                </Grid>
-                <Grid item xs={12} sm={4}>
-                    <Paper className={classes.paper}>
-                        <RightBox />
-                    </Paper>
-                </Grid>
-                </Hidden>
-                <Hidden only={['sm','md','lg','xl']}>
-                    <MobileContent />
-                </Hidden>
+                <Content />
             </Grid>
-            <Grid container spacing={24}>
-                <Hidden xsDown>
-                <Grid item xs={12} sm={12}>
-                    <Paper className={classes.paper}>
-                        <img className={classes.row} src={Row}/>
-                    </Paper>
-                </Grid>
-                </Hidden>
-            </Grid>
+            <Hidden xsDown>
+                <StyledRow>
+                    <img src={Row} />
+                </StyledRow>
+            </Hidden>
             <Hidden only={['sm','md','lg','xl']}>
                 <StickedBottom>
                     <LabelBottomNavigation/>
