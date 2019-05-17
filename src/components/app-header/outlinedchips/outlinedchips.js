@@ -7,6 +7,7 @@ import Chip from '@material-ui/core/Chip';
 import Hidden from '@material-ui/core/Hidden';
 import Switch from '@material-ui/core/Switch';
 import Fedora from './fedora.png';
+import FedoraBlue from './fedoraBlue.png';
 
 class Switches extends React.Component {
     state = {
@@ -110,7 +111,7 @@ function OutlinedChips(props) {
         <div className={classes.root}>
             <Hidden xsDown>
                 <StyledSwicherContainer className={classes.desc}>
-                    <img className={classes.image} src={Fedora}/>
+                    <img className={classes.image} src={FedoraBlue}/>
                     <p>Go Incognito</p>
                     <Switch/>
                 </StyledSwicherContainer>
