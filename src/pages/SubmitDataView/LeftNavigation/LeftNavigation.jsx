@@ -2,28 +2,55 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Paper from '@material-ui/core/Paper';
+import { Link } from 'react-router-dom';
 
 import { Logo } from '../../../components/Logo';
-import { Certificate } from 'crypto';
 
 
 const Container = styled(Paper)`
   position: fixed;
   height: 100%;
   top: 0px;
-  width: 220px;
+  width: 15vw;
   ul {
     list-style: none;
     padding-left: 0px;
     li {
-      height: 80px;
+      a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: black;
+      }
+      height: 70px;
+      padding-left: 30px;
+      margin-top: 15px;
+      img {
+        width: 40px;
+        margin-right: 15px;
+      }
+      .title {
+        font-size: 16px;
+        font-weight: 300;
+      }
+    }
+    li:first-child {
+      margin-top: 30px;
+    }
+    li.active {
+      background-color: #fff9f5;
+      font-weight: 400;
+      border-left: 6px solid #fd7313;
+      padding-left: 24px;
     }
   }
 `;
 
 const LogoContainer = styled.div`
   display: flex;
-  justify-content: center;
+  padding-left: 30px;
   align-items: center;
   height: 100px;
   background-color: #ffede0;
@@ -37,9 +64,17 @@ export const LeftNavigation = ({ items, activeItem }) => {
       </LogoContainer>
       <ul>
         {
-          items.map(item => (
-            <li key={item.key}>{item.title}</li>
-          ))
+          items.map(item => {
+            const isActive = item.key === activeItem;
+            return (
+              <li key={item.key} className={isActive ? 'active' : ''}>
+                <Link to={`/submit/${item.key}`}>
+                  <img src={item.image} alt={item.title}/>
+                  <span className="title">{item.title}</span>
+                </Link>
+              </li>
+            )
+          })
         }
       </ul>
     </Container>

@@ -1,0 +1,1 @@
+export { SubmitDataContent } from './SubmitDataContent';
