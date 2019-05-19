@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Hidden from '@material-ui/core/Hidden';
 
 import { LeftNavigation } from './LeftNavigation';
 import { SubmitDataContent } from './SubmitDataContent';
@@ -69,7 +70,9 @@ export const SubmitDataView = ({ match }) => {
   const { title, image, categories } = contentData;
   return (
     <div>
-      <LeftNavigation items={menuItems} activeItem={viewType} data={contentData} />
+      <Hidden xsDown>
+        <LeftNavigation items={menuItems} activeItem={viewType} data={contentData} />
+      </Hidden>
       <SubmitDataContent
         title={title}
         image={image}

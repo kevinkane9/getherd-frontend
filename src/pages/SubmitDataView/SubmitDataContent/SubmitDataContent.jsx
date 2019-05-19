@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import CheckIcon from '@material-ui/icons/Check';
+import Hidden from '@material-ui/core/Hidden';
 
 import { Categories } from '../Categories';
 
@@ -30,6 +31,14 @@ const Container = styled.div`
   @media (max-width: 1100px) {
     width: calc(100% - 21vw);
     margin-left: 21vw;
+  }
+  @media (max-width: 1100px) {
+    width: calc(100% - 21vw);
+    margin-left: 21vw;
+  }
+  @media (max-width: 599px) {
+    width: 100%;
+    margin-left: 0;
   }
 `;
 
@@ -90,33 +99,49 @@ const BottomBox = styled(Grid)`
       height: 30px;
     }
   }
+  @media (max-width: 599px) {
+    button {
+      border-radius: 50%;
+      padding: 20px;
+      svg {
+        margin-left: 0px;
+      }
+    }
+  }
 `;
 
 
 export const SubmitDataContent = ({ title, image, categories, activeCategories, viewType }) => {
   return (
     <Container>
-      <Header>
-        <h1 className="title">{title}</h1>
-        <img src={image} alt={viewType}/>
-      </Header>
+      <Hidden xsDown>
+        <Header>
+          <h1 className="title">{title}</h1>
+          <img src={image} alt={viewType}/>
+        </Header>
+      </Hidden>
       <Content>
         <StyledGrid container spacing={24}>
-          <StyledGrid item xs={8}>
+          <StyledGrid item xs={12} sm={8}>
             <StyledPaper elevation={1}>
               <textarea placeholder="Type here.." name="text"></textarea>
             </StyledPaper>
           </StyledGrid>
-          <StyledGrid item xs={4}>
-            <StyledPaper className="categories-container">
-              <h3>Pick any 3 labels</h3>
-              <Categories categories={categories} selectedCategories={activeCategories} />
-            </StyledPaper>
-          </StyledGrid>
+          <Hidden xsDown>
+            <StyledGrid item xs={4}>
+              <StyledPaper className="categories-container">
+                <h3>Pick any 3 labels</h3>
+                <Categories categories={categories} selectedCategories={activeCategories} />
+              </StyledPaper>
+            </StyledGrid>
+          </Hidden>
         </StyledGrid>
         <BottomBox>
           <Button variant="contained" color="primary">
-            Submit <CheckIcon />
+            <Hidden xsDown>
+              <span>Submit</span>&nbsp;
+            </Hidden>
+            <CheckIcon />
           </Button>
         </BottomBox>
       </Content>

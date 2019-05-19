@@ -2,6 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import styled from 'styled-components';
 import Hidden from '@material-ui/core/Hidden';
+import Paper from '@material-ui/core/Paper';
 import { withStyles } from '@material-ui/core/styles';
 
 import CelebrateImageMobile from './celebrateMobile.png';
@@ -12,8 +13,8 @@ import IdeasImage from './idea.png';
 import ConcernsImage from './concerns.png';
 import BanerText from '../../components/app-baner/banerText';
 import BanerMobile from '../../components/app-baner-mobile/banermobile';
-import Paper from '@material-ui/core/Paper';
 import Row from '../../components/img/row.png';
+import LabelBottomNavigation from '../../components/app-mobile-content/bottom-navigation/bottom-navigation';
 
 import { ContentBox } from './ContentBox';
 const Container = styled.div`
@@ -60,6 +61,12 @@ const StyledPaperMobile = styled(Paper)`
   @media (max-width: 600px) {
     padding-top: 0px !important;
   }
+`;
+
+const StickedBottom = styled.div`
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
 `;
 
 const styles = theme => ({
@@ -136,6 +143,11 @@ const HomeComponent = ({ classes }) => {
       </Grid>
       <Hidden xsDown>
         <StyledRow><img src={Row} /></StyledRow>
+      </Hidden>
+      <Hidden only={['sm','md','lg','xl']}>
+        <StickedBottom>
+          <LabelBottomNavigation/>
+        </StickedBottom>
       </Hidden>
     </>
   )
