@@ -22,10 +22,6 @@ import LabelBottomNavigation from './app-mobile-content/bottom-navigation/bottom
 import { Routes } from './Routes';
 
 const styles = theme => ({
-    root: {
-        flexGrow: 1,
-        overflow: 'hidden',
-    },
     grid: {
         [theme.breakpoints.down('xs')]: {
             backgroundColor: '#fd7313',

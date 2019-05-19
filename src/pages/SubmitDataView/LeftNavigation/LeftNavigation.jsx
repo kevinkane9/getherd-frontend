@@ -11,7 +11,10 @@ const Container = styled(Paper)`
   position: fixed;
   height: 100%;
   top: 0px;
-  width: 15vw;
+  width: 16vw;
+  @media (max-width: 1100px) {
+    width: 20vw;
+  }
   ul {
     list-style: none;
     padding-left: 0px;
@@ -46,6 +49,24 @@ const Container = styled(Paper)`
       padding-left: 24px;
     }
   }
+  @media (max-width: 850px) {
+    ul {
+      li {
+        padding-left: 20px;
+        a img {
+          width: 20px;
+          margin-right: 5px;
+        }
+        a .title {
+          font-size: 12px;
+        }
+      }
+      li.active {
+        border-left: 4px solid #fd7313;
+        padding-left: 16px;
+      }
+    }
+  }
 `;
 
 const LogoContainer = styled.div`
@@ -54,6 +75,9 @@ const LogoContainer = styled.div`
   align-items: center;
   height: 100px;
   background-color: #ffede0;
+  @media (max-width: 850px) {
+    padding-left: 20px;
+  }
 `;
 
 export const LeftNavigation = ({ items, activeItem }) => {

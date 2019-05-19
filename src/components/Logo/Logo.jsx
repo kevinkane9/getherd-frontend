@@ -9,14 +9,14 @@ const StyledLogoContainer = styled.div`
   img {
     width: 150px;
   }
-  @media (max-width: 800px) {
+  @media (max-width: 850px) {
     img {
-      width: 120px;
+      width: 100px;
     }
   }
   @media (max-width: 660px) {
     img {
-      width: 100px;
+      width: 90px;
     }
   }
 `;
