@@ -10,6 +10,6 @@ export const Theme = createMuiTheme({
       root: {
         fontFamily: "'Montserrat', sans-serif",
       }
-    }
+    },
   }
 });

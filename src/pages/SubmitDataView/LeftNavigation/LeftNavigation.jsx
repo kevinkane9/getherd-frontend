@@ -73,7 +73,7 @@ const LogoContainer = styled.div`
   display: flex;
   padding-left: 30px;
   align-items: center;
-  height: 100px;
+  height: 120px;
   background-color: #ffede0;
   @media (max-width: 850px) {
     padding-left: 20px;

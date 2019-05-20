@@ -53,13 +53,16 @@ const StyledRow = styled.div`
 `;
 
 const StyledMobileTitle = styled(Grid)`
-    padding-top: 0px !important;
+  padding-top: 0px !important;
+  margin: 0px !important;
+  width: 100% !important;
 `;
 
 
 const StyledPaperMobile = styled(Paper)`
   @media (max-width: 600px) {
-    padding-top: 0px !important;
+    padding-top: 10px !important;
+    padding-bottom: 0px !important;
   }
 `;
 
@@ -67,6 +70,11 @@ const StickedBottom = styled.div`
     position: fixed;
     bottom: 0px;
     width: 100%;
+`;
+
+const StyledGrid = styled(Grid)`
+  margin: 0px !important;
+  width: 100% !important;
 `;
 
 const styles = theme => ({
@@ -84,7 +92,7 @@ const HomeComponent = ({ classes }) => {
   return (
     <>
       <Hidden xsDown>
-        <Grid container spacing={24} className={classes.grid}>
+        <StyledGrid container spacing={24} className={classes.grid}>
           <Grid item xs={12} sm={4}>
             <Paper className={classes.paper}>
               <BanerText/>
@@ -93,7 +101,7 @@ const HomeComponent = ({ classes }) => {
           <Grid item xs={12} sm={8}>
             <Paper className={classes.paper}></Paper>
           </Grid>
-        </Grid>
+        </StyledGrid>
       </Hidden>
       <Hidden only={['sm','md','lg','xl']}>
         <StyledMobileTitle container spacing={24} className={classes.grid}>
@@ -104,7 +112,7 @@ const HomeComponent = ({ classes }) => {
           </StyledMobileTitle>
         </StyledMobileTitle>
       </Hidden>
-      <Grid container spacing={24}>
+      <StyledGrid container spacing={24}>
         <Container>
           <Grid item xs={12} sm={4}>
             <Hidden only={['sm','md','lg','xl']}>
@@ -140,7 +148,7 @@ const HomeComponent = ({ classes }) => {
             />
           </Grid>
         </Container>
-      </Grid>
+      </StyledGrid>
       <Hidden xsDown>
         <StyledRow><img src={Row} /></StyledRow>
       </Hidden>

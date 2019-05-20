@@ -69,7 +69,7 @@ export const SubmitDataView = ({ match }) => {
   const contentData = contentItems.find(item => item.key === viewType);
   const { title, image, categories } = contentData;
   return (
-    <div>
+    <>
       <Hidden xsDown>
         <LeftNavigation items={menuItems} activeItem={viewType} data={contentData} />
       </Hidden>
@@ -80,7 +80,7 @@ export const SubmitDataView = ({ match }) => {
         activeCategories={activeCategories}
         viewType={viewType}
       />
-    </div>
+    </>
   )
 }
 

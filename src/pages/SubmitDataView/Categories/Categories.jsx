@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-
 const Container = styled.div`
   width: 80%;
   margin: 0 auto;
@@ -24,6 +23,12 @@ const Container = styled.div`
   .category.active {
     background-color: #fd7313;
     color: white;
+  }
+  @media (max-width: 599px) {
+    .category {
+      font-size: 12px;
+    }
+    
   }
 `;
 
