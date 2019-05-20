@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import TileIcon from './tile.png';
+import TileWhiteIcon from './tilewhite.png';
+
 const Container = styled.div`
   width: 80%;
   margin: 0 auto;
@@ -19,16 +22,25 @@ const Container = styled.div`
     font-weight: 100;
     cursor: pointer;
     user-select: none;
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 5px;
+      width: 15px;
+      height: 15px;
+    }
   }
   .category.active {
     background-color: #fd7313;
     color: white;
   }
   @media (max-width: 599px) {
+    width: 95%;
+    overflow: auto;
     .category {
       font-size: 12px;
+      padding: 12px 22px;
     }
-    
   }
 `;
 
@@ -51,6 +63,7 @@ export const Categories = (props) => {
           const isActive = selectedCategories.find(c => c.id === category.id);
           return (
             <span onClick={() => onSetCategory(category, isActive)} className={`category ${isActive ? 'active' : ''}`}>
+              <img src={isActive ? TileWhiteIcon : TileIcon} alt="tile"/>
               {category.name}
             </span>
           )

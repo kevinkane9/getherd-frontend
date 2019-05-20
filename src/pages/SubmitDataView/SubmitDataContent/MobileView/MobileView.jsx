@@ -11,6 +11,9 @@ import Switcher from '../../../../components/app-header/outlinedchips/outlinedch
 import { Avatar } from '../../../../components/Avatar';
 import { Categories } from '../../Categories';
 import CompleteBackground from './completeBackground.png';
+import GalleryImage from './gallery.png';
+import GifImage from './gif.png';
+import PlusImage from './plus.png';
 
 const Content = styled.div`
   padding: 0px;
@@ -30,14 +33,14 @@ const Content = styled.div`
     border-radius: 50%;
     padding: 15px;
     position: fixed;
-    bottom: 70px;
+    bottom: 80px;
     right: 25px;
     svg {
       color: white;
       font-size: 40px;
     }
   }
-  img {
+  img.fullscreen-img {
     width: 100%;
     height: 100%;
     top: 0px;
@@ -75,8 +78,20 @@ const ToolBox = styled.div`
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 50px;
+  height: 70px;
   background-color: white;
+  .content-container {
+    display: flex;
+    align-items: center;
+    padding: 0px 30px;
+    height: 100%;
+    img:first-child {
+      margin-right: 20px;
+    }
+    img:last-child {
+      margin-left: auto;
+    }
+  }
 `;
 
 export const MobileView = ({ categories, activeCategories }) => {
@@ -97,7 +112,13 @@ export const MobileView = ({ categories, activeCategories }) => {
           <Button variant="contained" color="primary" onClick={() => onSetStep(2)}>
             <CheckIcon />
           </Button>
-          <ToolBox />
+          <ToolBox>
+            <div className="content-container">
+              <img src={GalleryImage} alt="gallery"/>
+              <img src={GifImage} alt="gif"/>
+              <img src={PlusImage} alt="plus"/>
+            </div>
+          </ToolBox>
         </Content>
       </>
     )
@@ -123,7 +144,7 @@ export const MobileView = ({ categories, activeCategories }) => {
     return (
       <Content>
         <Link to="/">
-          <img src={CompleteBackground} alt="complete" />
+          <img className="fullscreen-img" src={CompleteBackground} alt="complete" />
         </Link>
       </Content>
     )
