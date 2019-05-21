@@ -12,9 +12,7 @@ export const Avatar = ({ width, height }) => {
   `;
   return (
     <div className="avatar-container">
-      <a href='#'>
-        <StyledAvatar alt="Remy Sharp" src={DefaultAvatar} />
-      </a>
+      <StyledAvatar alt="Remy Sharp" src={DefaultAvatar} />
     </div>
   )
 };

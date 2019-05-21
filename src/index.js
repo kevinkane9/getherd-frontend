@@ -7,6 +7,9 @@ import { createBrowserHistory } from 'history';
 import './main.css';
 
 const theme = createMuiTheme({
+  typography: {
+    useNextVariants: true,
+  },
   palette: {
     primary: {
       light: '#757ce8',
