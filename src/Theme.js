@@ -11,5 +11,10 @@ export const Theme = createMuiTheme({
         fontFamily: "'Montserrat', sans-serif",
       }
     },
+    MuiSwitch: {
+      switchBase: {
+        height: 30,
+      }
+    },
   }
 });

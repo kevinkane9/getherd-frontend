@@ -2,29 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { withStyles } from '@material-ui/core/styles';
-import Avatar from '@material-ui/core/Avatar';
-import Chip from '@material-ui/core/Chip';
 import Hidden from '@material-ui/core/Hidden';
 import Switch from '@material-ui/core/Switch';
 import Fedora from './fedora.png';
 import FedoraBlue from './fedoraBlue.png';
-
-class Switches extends React.Component {
-    state = {
-        checkedA: true,
-        checkedB: true,
-    };
-
-    handleChange = name => event => {
-        this.setState({ [name]: event.target.checked });
-    };
-
-    render() {
-        return (
-                <Switch defaultChecked value="checkedF" color="default" />
-        );
-    }
-}
 
 const styles = theme => ({
     root: {
@@ -61,14 +42,6 @@ const styles = theme => ({
         marginTop: '17px',
     }
 });
-
-function handleDelete() {
-    alert('You clicked the delete icon.'); // eslint-disable-line no-alert
-}
-
-function handleClick() {
-    alert('You clicked the Chip.'); // eslint-disable-line no-alert
-}
 
 const StyledSwicherContainer = styled.div`
     display: flex;
@@ -109,14 +82,14 @@ function OutlinedChips(props) {
         <div className={classes.root}>
             <Hidden xsDown>
                 <StyledSwicherContainer className={classes.desc}>
-                    <img className={classes.image} src={FedoraBlue}/>
+                    <img className={classes.image} src={FedoraBlue} alt="fedora"/>
                     <p>Go Incognito</p>
                     <Switch/>
                 </StyledSwicherContainer>
             </Hidden>
             <Hidden only={['sm','md','lg','xl']}>
                 <StyledSwicherMobContainer className={classes.mob}>
-                    <img className={classes.image} src={Fedora}/>
+                    <img className={classes.image} src={Fedora} alt="fedora"/>
                     <p className={classes.p}>Go Incognito</p>
                     <Switch  color="primary"/>
                 </StyledSwicherMobContainer>

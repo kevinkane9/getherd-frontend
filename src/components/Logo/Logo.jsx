@@ -9,6 +9,11 @@ const StyledLogoContainer = styled.div`
   img {
     width: 150px;
   }
+  @media (max-width: 1100px) {
+    img {
+      width: 110px;
+    }
+  }
   @media (max-width: 850px) {
     img {
       width: 100px;

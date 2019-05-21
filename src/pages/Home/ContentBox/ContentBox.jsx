@@ -41,8 +41,10 @@ export const ContentBox = ({ title, description, image, imageMobile, link }) => 
   const Container = styled(Paper)`
     background: url(${image}) no-repeat right;
     background-size: contain;
+    background-color: white;
     margin: 0px 30px;
     padding: 20px 16px;
+    z-index: 1;
     @media (min-width: 600px) {
       height: 250px;
       max-width: 250px;
@@ -52,6 +54,7 @@ export const ContentBox = ({ title, description, image, imageMobile, link }) => 
       display: flex;
       flex-direction: column;
       box-shadow: none !important;
+      background-color: transparent !important;
     }
     @media (max-width: 800px) and (min-width: 601px) {
       height: 180px;

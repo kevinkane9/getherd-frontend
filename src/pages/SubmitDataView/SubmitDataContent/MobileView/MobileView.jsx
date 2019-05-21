@@ -7,7 +7,7 @@ import CheckIcon from '@material-ui/icons/Check';
 import CloseIcon from '@material-ui/icons/Close';
 import ArrowBackIcon from '@material-ui/icons/ArrowBackIos';
 
-import Switcher from '../../../../components/app-header/outlinedchips/outlinedchips.js';
+import { IncognitoSwitcher } from '../../../../components/IncognitoSwitcher';
 import { Avatar } from '../../../../components/Avatar';
 import { Categories } from '../../Categories';
 import CompleteBackground from './completeBackground.png';
@@ -104,7 +104,7 @@ export const MobileView = ({ categories, activeCategories }) => {
       <>
         <Header>
           <Link to="/"><CloseIcon className="close" /></Link>
-          <Switcher />
+          <IncognitoSwitcher />
           <Avatar width={50} height={50} />
         </Header>
         <Content>

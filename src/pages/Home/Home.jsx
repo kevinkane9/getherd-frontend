@@ -14,6 +14,7 @@ import ConcernsImage from './concerns.png';
 import BanerText from '../../components/app-baner/banerText';
 import BanerMobile from '../../components/app-baner-mobile/banermobile';
 import Row from '../../components/img/row.png';
+import FonImage from './headerfon.png'
 import LabelBottomNavigation from '../../components/app-mobile-content/bottom-navigation/bottom-navigation';
 
 import { ContentBox } from './ContentBox';
@@ -33,12 +34,13 @@ const Ovals = styled.div`
     width: 320px;
     position: absolute;
     height: 150px;
-    top: 45px;
+    top: -45px;
     background: #fd7313;
     z-index: -1;
     -moz-border-radius: 100px / 50px;
     -webkit-border-radius: 100px / 50px;
     border-radius: 100px / 30px;
+    z-index: -1;
   }
   .right {
     right: 0px;
@@ -77,6 +79,17 @@ const StyledGrid = styled(Grid)`
   width: 100% !important;
 `;
 
+const HomeContainer = styled.div`
+  position: relative;
+  img.fon {
+    position: absolute;
+    top: -100px;
+    right: 0;
+    z-index: -1;
+    width: 60vw;
+  }
+`;
+
 const styles = theme => ({
   paper: {
     padding: theme.spacing.unit * 2,
@@ -90,7 +103,8 @@ const styles = theme => ({
 
 const HomeComponent = ({ classes }) => {
   return (
-    <>
+    <HomeContainer>
+      <Hidden xsDown><img className="fon" src={FonImage} alt="fon"/></Hidden>
       <Hidden xsDown>
         <StyledGrid container spacing={24} className={classes.grid}>
           <Grid item xs={12} sm={4}>
@@ -150,14 +164,14 @@ const HomeComponent = ({ classes }) => {
         </Container>
       </StyledGrid>
       <Hidden xsDown>
-        <StyledRow><img src={Row} /></StyledRow>
+        <StyledRow><img src={Row} alt="row" /></StyledRow>
       </Hidden>
       <Hidden only={['sm','md','lg','xl']}>
         <StickedBottom>
           <LabelBottomNavigation/>
         </StickedBottom>
       </Hidden>
-    </>
+    </HomeContainer>
   )
 };
 
