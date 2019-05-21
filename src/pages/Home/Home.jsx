@@ -69,9 +69,9 @@ const StyledPaperMobile = styled(Paper)`
 `;
 
 const StickedBottom = styled.div`
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
 `;
 
 const StyledGrid = styled(Grid)`

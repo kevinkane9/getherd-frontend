@@ -35,6 +35,9 @@ const StyledGrid = styled(Grid)`
       }
     }
   }
+  @media (max-height: 700px) {
+    height: 50px;
+  }
 `
 
 export const ContentBox = ({ title, description, image, imageMobile, link }) => {

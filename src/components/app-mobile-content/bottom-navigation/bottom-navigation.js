@@ -13,23 +13,24 @@ import MyVoice from './support'
 const styles = {
     root: {
         width: '100%',
-        height: 60,
-        paddingBottom: '2%',
+        height: 50,
         color: '#9d9d9d',
         boxShadow:'0px -4px 23px -4px rgba(0,0,0,0.5)',
     }
 };
 
 const StyledNavigationContainer = styled(BottomNavigation)`
-    height: 70px;
+    height: 50px;
+    button {
+        padding-top: 0px !important;
+    }
 `;
 
 const StyledNavigation = styled(BottomNavigationAction)`
     svg {
-        font-size: 30px !important;
+        font-size: 20px !important;
         margin: 6px;
     }
-    
 `;
 
 class LabelBottomNavigation extends React.Component {

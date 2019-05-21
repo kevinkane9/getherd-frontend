@@ -55,6 +55,12 @@ const Header = styled.header`
   display: flex;
   align-items: center;
   padding: 0px 20px;
+  z-index: 3;
+  .switcher-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
   .close {
     color: white;
     width: 40px;
@@ -104,7 +110,9 @@ export const MobileView = ({ categories, activeCategories }) => {
       <>
         <Header>
           <Link to="/"><CloseIcon className="close" /></Link>
-          <IncognitoSwitcher />
+          <div className="switcher-container">
+            <IncognitoSwitcher />
+          </div>
           <Avatar width={50} height={50} />
         </Header>
         <Content>
