@@ -1,0 +1,1 @@
+export { MyVoice } from './MyVoice';

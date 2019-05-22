@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link, withRouter } from 'react-router-dom';
 
 const Nav = styled.nav`
   ul {
@@ -12,10 +13,18 @@ const Nav = styled.nav`
       font-size: 20px;
       font-weight: 500;
       white-space: nowrap;
+      opacity: 0.6;
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
     }
     li:hover {
       text-decoration: none;
       background-color: rgba(0, 0, 0, 0.08);
+    }
+    li.active {
+      opacity: 1;
     }
   }
   @media (max-width: 1100px) {
@@ -37,15 +46,33 @@ const Nav = styled.nav`
   }
 `;
 
-export const Menu = () => {
+
+const menuItems = [
+  { title: 'Home', pathname: '/' },
+  { title: 'Announcements', pathname: '/announcements' },
+  { title: 'Ideas', pathname: '/ideas' },
+  { title: 'Voice', pathname: '/my-voice' },
+]
+
+export const Component = ({ location }) => {
   return (
     <Nav>
       <ul>
-        <li>Home</li>
-        <li>Announcements</li>
-        <li>Ideas</li>
-        <li>My Voice</li>
+        {
+          menuItems.map(item => {
+            const className = item.pathname === location.pathname ? 'active' : '';
+            return (
+              <li key={item.pathname} className={className}>
+                <Link to={item.pathname}>
+                  {item.title}
+                </Link>
+              </li>
+            )
+          })
+        }
       </ul>
     </Nav>
   );
 }
+
+export const Menu = withRouter(Component);

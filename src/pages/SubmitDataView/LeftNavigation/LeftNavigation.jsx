@@ -12,6 +12,7 @@ const Container = styled(Paper)`
   height: 100%;
   top: 0px;
   width: 16vw;
+  z-index: 3; 
   @media (max-width: 1100px) {
     width: 20vw;
   }
@@ -73,7 +74,7 @@ const LogoContainer = styled.div`
   display: flex;
   padding-left: 30px;
   align-items: center;
-  height: 120px;
+  height: 100px;
   background-color: #ffede0;
   @media (max-width: 850px) {
     padding-left: 20px;
