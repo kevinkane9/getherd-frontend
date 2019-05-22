@@ -42,6 +42,12 @@ const Container = styled.div`
       padding: 12px 22px;
     }
   }
+  @media (max-height: 700px) {
+    .category {
+      font-size: 10px;
+      padding: 6px 10px;
+    }
+  }
 `;
 
 export const Categories = (props) => {

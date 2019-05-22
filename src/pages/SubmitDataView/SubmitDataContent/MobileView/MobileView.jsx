@@ -35,6 +35,9 @@ const Content = styled.div`
     position: fixed;
     bottom: 80px;
     right: 25px;
+    &.no-bottom-box {
+      bottom: 20px;
+    }
     svg {
       color: white;
       font-size: 40px;
@@ -141,7 +144,7 @@ export const MobileView = ({ categories, activeCategories }) => {
         </Header>
         <Content>
           <Categories categories={categories} selectedCategories={activeCategories} />
-          <Button variant="contained" color="primary" onClick={() => onSetStep(3)}>
+          <Button variant="contained" color="primary" onClick={() => onSetStep(3)} className="no-bottom-box">
             <CheckIcon />
           </Button>
         </Content>
