@@ -139,7 +139,7 @@ export const MobileView = ({ categories, activeCategories }) => {
       <>
         <Header className="category-header">
           <ArrowBackIcon className="back" onClick={() => onSetStep(1)} />
-          <span class="category-title">Pick a category</span>
+          <span className="category-title">Pick a category</span>
           <Avatar width={50} height={50} />
         </Header>
         <Content>

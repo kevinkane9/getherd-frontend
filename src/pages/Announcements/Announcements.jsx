@@ -44,9 +44,11 @@ const defaultData = [
 ];
 
 const Container = styled.div`
-    display: flex;
-    grid-gap: 30px;
-    margin: 0 100px;
+  display: flex;
+  grid-gap: 30px;
+  padding : 0 100px;
+  overflow: auto;
+  height: calc(100vh - 100px);
 `;
 
 export const Announcements = () => {
