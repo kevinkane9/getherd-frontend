@@ -33,8 +33,19 @@ const Container = styled.header`
   div.header-item:last-child {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     .avatar-container {
       padding-left: 10px;
+    }
+  }
+  @media (min-width: 1000px) {
+    div.header-item.logo-container, div.header-item.menu-container {
+      width: 35%;
+    }
+    div.header-item.switcher-container {
+      width: 30%;
+      justify-content: center;
+      padding-right: 0px;
     }
   }
   @media (max-width: 1200px) {
@@ -60,7 +71,7 @@ const Container = styled.header`
 export const Header = (props) => {
   return (
     <Container>
-      <div className="header-item">
+      <div className="header-item logo-container">
         <Hidden xsDown><Logo /></Hidden>
         <Hidden only={['sm','md','lg','xl']}>
           <MenuIcon className="menu-icon" />
@@ -69,7 +80,7 @@ export const Header = (props) => {
       <div className="header-item switcher-container">
         <IncognitoSwitcher />
       </div>
-      <div className="header-item">
+      <div className="header-item menu-container">
         <Hidden xsDown><Menu /></Hidden>
         <Avatar width={40} height={40} />
       </div>

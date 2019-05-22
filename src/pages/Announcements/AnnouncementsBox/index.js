@@ -1,0 +1,1 @@
+export { AnnouncementsBox } from './AnnouncementsBox';

@@ -10,7 +10,7 @@ const Nav = styled.nav`
     li {
       cursor: pointer;
       padding: 8px 20px;
-      font-size: 20px;
+      font-size: 1vw;
       font-weight: 500;
       white-space: nowrap;
       opacity: 0.6;

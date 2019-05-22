@@ -90,6 +90,11 @@ const HomeContainer = styled.div`
   }
 `;
 
+const Content = styled.div`
+  overflow: auto;
+  height: calc(100vh - 100px);
+`;
+
 const styles = theme => ({
   paper: {
     padding: theme.spacing.unit * 2,
@@ -105,6 +110,7 @@ const HomeComponent = ({ classes }) => {
   return (
     <HomeContainer>
       <Hidden xsDown><img className="fon" src={FonImage} alt="fon"/></Hidden>
+      <Content>
       <Hidden xsDown>
         <StyledGrid container spacing={24} className={classes.grid}>
           <Grid item xs={12} sm={4}>
@@ -171,6 +177,7 @@ const HomeComponent = ({ classes }) => {
           <LabelBottomNavigation/>
         </StickedBottom>
       </Hidden>
+      </Content>
     </HomeContainer>
   )
 };

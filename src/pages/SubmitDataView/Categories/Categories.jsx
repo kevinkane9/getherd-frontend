@@ -68,7 +68,7 @@ export const Categories = (props) => {
         props.categories.map(category => {
           const isActive = selectedCategories.find(c => c.id === category.id);
           return (
-            <span onClick={() => onSetCategory(category, isActive)} className={`category ${isActive ? 'active' : ''}`}>
+            <span key={category.id} onClick={() => onSetCategory(category, isActive)} className={`category ${isActive ? 'active' : ''}`}>
               <img src={isActive ? TileWhiteIcon : TileIcon} alt="tile"/>
               {category.name}
             </span>
