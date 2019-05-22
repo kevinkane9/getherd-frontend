@@ -28,6 +28,7 @@ const Content = styled.div`
     padding: 30px;
     background-color: #f8f8f8;
     font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
   }
   button {
     border-radius: 50%;
