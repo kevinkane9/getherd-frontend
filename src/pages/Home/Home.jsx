@@ -72,6 +72,7 @@ const StickedBottom = styled.div`
   position: fixed;
   bottom: 0px;
   width: 100%;
+  left: 0px;
 `;
 
 const StyledGrid = styled(Grid)`

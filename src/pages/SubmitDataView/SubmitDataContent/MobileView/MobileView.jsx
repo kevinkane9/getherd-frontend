@@ -18,8 +18,9 @@ import PlusImage from './plus.png';
 const Content = styled.div`
   padding: 0px;
   height: 100%;
+  background-color: #f8f8f8;
   textarea {
-    height: calc(100% - 170px);
+    height: calc(100% - 270px);
     width: 100%;
     resize: none;
     font-size: 23px;
@@ -30,6 +31,8 @@ const Content = styled.div`
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
     overflow: auto;
+    outline: none;
+    border: none;
   }
   button {
     border-radius: 50%;
