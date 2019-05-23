@@ -9,7 +9,7 @@ const Nav = styled.nav`
     display: flex;
     li {
       cursor: pointer;
-      padding: 8px 20px;
+      padding: 0.5vw 0.8vw;
       font-size: 1vw;
       font-weight: 500;
       white-space: nowrap;
@@ -27,20 +27,13 @@ const Nav = styled.nav`
       opacity: 1;
     }
   }
-  @media (max-width: 1100px) {
-    ul > li {
+  @media (min-width: 1400px) {
+    ul li {
       font-size: 16px;
-      padding: 6px 8px;
     }
   }
-  @media (max-width: 800px) {
-    ul > li {
-      padding: 6px 6px;
-      font-size: 13px;
-    }
-  }
-  @media (max-width: 660px) {
-      padding: 6px 4px;
+  @media (max-width: 1000px) {
+    ul li {
       font-size: 12px;
     }
   }
