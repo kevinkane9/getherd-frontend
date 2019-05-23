@@ -17,11 +17,7 @@ const activeCategories = [
   },
   {
     name: 'Category',
-    id: 12,
-  },
-  {
-    name: 'Category Thirteen',
-    id: 13,
+    id: 1,
   },
 ]
 

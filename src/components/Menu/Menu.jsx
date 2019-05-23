@@ -44,7 +44,7 @@ const menuItems = [
   { title: 'Home', pathname: '/' },
   { title: 'Announcements', pathname: '/announcements' },
   { title: 'Ideas', pathname: '/ideas' },
-  { title: 'Voice', pathname: '/my-voice' },
+  { title: 'My Voice', pathname: '/my-voice' },
 ]
 
 export const Component = ({ location }) => {

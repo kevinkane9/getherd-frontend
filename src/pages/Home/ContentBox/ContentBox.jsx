@@ -14,7 +14,7 @@ const StyledGrid = styled(Grid)`
       font-size: 12px;
     }
     h1 {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 500;
     }
   }
@@ -26,7 +26,7 @@ const StyledGrid = styled(Grid)`
       height: 100%;
       align-items: center;
       h1 {
-        font-size: 30px;
+        font-size: 26px;
       }
       p {
         min-height: 35px;
@@ -48,12 +48,13 @@ export const ContentBox = ({ title, description, image, imageMobile, link }) => 
     margin: 0px 30px;
     padding: 20px 16px;
     z-index: 1;
+
     @media (min-width: 600px) {
-      height: 250px;
-      max-width: 250px;
+      height: 215px;
+      max-width: 200px;
       margin: 0 auto;
       background: url(${imageMobile}) no-repeat top;
-      background-size: 65%;
+      background-size: 60%;
       display: flex;
       flex-direction: column;
       box-shadow: none !important;

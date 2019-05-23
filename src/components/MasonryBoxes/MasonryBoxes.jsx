@@ -12,13 +12,13 @@ const Column = styled.div`
 `;
 
 export const MasonryBoxes = ({ items, columns }) => {
-  console.log(columns)
   const columnItems = {};
   if (columns === 3) {
     columnItems.first = items.filter((item, index) => index%3 === 1);
     columnItems.second = items.filter((item, index) => index%3 === 2);
     columnItems.third = items.filter((item, index) => index%3 === 0);
-    console.log(columnItems);
+    columnItems.first.push(columnItems.third[columnItems.third.length - 1]);
+    columnItems.third.splice(-1,1);
     return (
       <Container>
         <Column>
@@ -29,6 +29,31 @@ export const MasonryBoxes = ({ items, columns }) => {
         </Column>
         <Column>
           { columnItems.second.map(item => item) }
+        </Column>
+      </Container>
+    )
+  }
+  if (columns === 2) {
+    columnItems.first = items.filter((item, index) => index%2 === 0);
+    columnItems.second = items.filter((item, index) => index%2 === 1);
+    columnItems.second.push(columnItems.first[columnItems.first.length - 1]);
+    columnItems.first.splice(-1,1);
+    return (
+      <Container>
+        <Column>
+          { columnItems.first.map(item => item) }
+        </Column>
+        <Column>
+          { columnItems.second.map(item => item) }
+        </Column>
+      </Container>
+    )
+  }
+  if (columns === 1) {
+    return (
+      <Container>
+        <Column>
+          { items.map(item => item) }
         </Column>
       </Container>
     )

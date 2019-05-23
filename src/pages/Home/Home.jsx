@@ -15,7 +15,7 @@ import BanerText from '../../components/app-baner/banerText';
 import BanerMobile from '../../components/app-baner-mobile/banermobile';
 import Row from '../../components/img/row.png';
 import FonImage from './headerfon.png'
-import LabelBottomNavigation from '../../components/app-mobile-content/bottom-navigation/bottom-navigation';
+import { BottomNavigation } from '../../components/BottomNavigation';
 
 import { ContentBox } from './ContentBox';
 const Container = styled.div`
@@ -174,7 +174,7 @@ const HomeComponent = ({ classes }) => {
       </Hidden>
       <Hidden only={['sm','md','lg','xl']}>
         <StickedBottom>
-          <LabelBottomNavigation/>
+          <BottomNavigation active="Home" />
         </StickedBottom>
       </Hidden>
       </Content>

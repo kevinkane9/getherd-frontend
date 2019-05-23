@@ -19,7 +19,7 @@ const Content = styled.div`
   padding: 0px;
   height: 100%;
   textarea {
-    height: 100%;
+    height: calc(100% - 170px);
     width: 100%;
     resize: none;
     font-size: 23px;
@@ -29,6 +29,7 @@ const Content = styled.div`
     background-color: #f8f8f8;
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
+    overflow: auto;
   }
   button {
     border-radius: 50%;

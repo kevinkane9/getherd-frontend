@@ -16,8 +16,8 @@ const Container = styled.div`
     border-radius: 28px;
     border: solid 1px #fd7313;
     background-color: rgba(253, 115, 19, 0.08);
-    padding: 6px 10px;
-    font-size: 9px;
+    padding: 8px 15px;
+    font-size: 13px;
     margin: 5px;
     font-weight: 100;
     cursor: pointer;
@@ -33,20 +33,6 @@ const Container = styled.div`
   .category.active {
     background-color: #fd7313;
     color: white;
-  }
-  @media (max-width: 599px) {
-    width: 95%;
-    overflow: auto;
-    .category {
-      font-size: 12px;
-      padding: 12px 22px;
-    }
-  }
-  @media (max-height: 700px) {
-    .category {
-      font-size: 10px;
-      padding: 6px 10px;
-    }
   }
 `;
 
