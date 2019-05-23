@@ -34,6 +34,12 @@ const Container = styled.div`
     background-color: #fd7313;
     color: white;
   }
+  @media (max-width: 600px) {
+    .category {
+      padding: 10px 18px;
+      font-size: 14px;
+    }
+  }
 `;
 
 export const Categories = (props) => {

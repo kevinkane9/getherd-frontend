@@ -20,7 +20,7 @@ const Content = styled.div`
   height: 100%;
   background-color: #f8f8f8;
   textarea {
-    height: calc(100% - 270px);
+    height: calc(100% - 180px);
     width: 100%;
     resize: none;
     font-size: 23px;
@@ -36,16 +36,17 @@ const Content = styled.div`
   }
   button {
     border-radius: 50%;
-    padding: 15px;
+    padding: 10px;
     position: fixed;
-    bottom: 80px;
+    bottom: 30px;
     right: 25px;
+    min-width: 0px;
     &.no-bottom-box {
       bottom: 20px;
     }
     svg {
       color: white;
-      font-size: 40px;
+      font-size: 25px;
     }
   }
   img.fullscreen-img {
@@ -59,7 +60,7 @@ const Content = styled.div`
 
 const Header = styled.header`
   background-color: #fd7313;
-  height: 100px;
+  height: 70px;
   display: flex;
   align-items: center;
   padding: 0px 20px;
@@ -81,7 +82,7 @@ const Header = styled.header`
   }
   .category-title {
     color: white;
-    font-size: 28px;
+    font-size: 24px;
   }
   &.category-header {
     justify-content: space-between;
@@ -128,13 +129,6 @@ export const MobileView = ({ categories, activeCategories }) => {
           <Button variant="contained" color="primary" onClick={() => onSetStep(2)}>
             <CheckIcon />
           </Button>
-          <ToolBox>
-            <div className="content-container">
-              <img src={GalleryImage} alt="gallery"/>
-              <img src={GifImage} alt="gif"/>
-              <img src={PlusImage} alt="plus"/>
-            </div>
-          </ToolBox>
         </Content>
       </>
     )
