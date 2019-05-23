@@ -8,18 +8,24 @@ import CheckIcon from '@material-ui/icons/Check';
 
 import { Categories } from '../../Categories';
 
+const Container = styled.div`
+  overflow: auto;
+  height: calc(100vh - 120px);
+`;
+
 const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 5px 40px;
   h1.title {
-    font-size: 40px;
+    font-size: 30px;
     max-width: 420px;
-    font-weight: 100;
+    font-weight: 500;
+    max-width: 300px;
   }
   img {
-    width: 80px
+    width: 60px
   }
 `;
 
@@ -29,15 +35,15 @@ const StyledGrid = styled(Grid)`
 
 const StyledPaper = styled(Paper)`
   border-radius: 14px !important;
-  height: 40vh;
+  height: 45vh;
   overflow: auto;
 `;
 
 const Content = styled.div`
-  padding: 20px 40px;
+  padding: 5px 20px;
   textarea {
     width: 100%;
-    height: 99%
+    height: 95%
     resize: none;
     border: none;
     font-size: 24px;
@@ -68,11 +74,11 @@ const BottomBox = styled(Grid)`
   width: 100%;
   padding-top: 50px;
   button {
-    margin: 20px auto;
+    margin: 10px auto;
     color: white;
     border-radius: 47px;
-    padding: 10px 30px;
-    font-size: 24px;
+    padding: 8px 30px;
+    font-size: 20px;
     text-transform: none;
     font-weight: 300;
     svg {
@@ -86,19 +92,19 @@ const BottomBox = styled(Grid)`
 
 export const DesctopView = ({ image, title, viewType, categories, activeCategories }) => {
   return (
-    <>
+    <Container>
       <Header>
         <h1 className="title">{title}</h1>
         <img src={image} alt={viewType}/>
       </Header>
       <Content>
         <StyledGrid container spacing={24}>
-          <StyledGrid item xs={12} sm={8}>
+          <StyledGrid item sm={7} xl={8}>
             <StyledPaper elevation={1}>
               <textarea placeholder="Type here.." name="text"></textarea>
             </StyledPaper>
           </StyledGrid>
-            <StyledGrid item xs={4}>
+            <StyledGrid item sm={5}  xl={4}>
               <StyledPaper className="categories-container">
                 <h3>Pick any 3 labels</h3>
                 <Categories categories={categories} selectedCategories={activeCategories} />
@@ -112,7 +118,7 @@ export const DesctopView = ({ image, title, viewType, categories, activeCategori
           </Button>
         </BottomBox>
       </Content>
-    </>
+    </Container>
   )
 }
 

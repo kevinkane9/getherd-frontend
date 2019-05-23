@@ -3,9 +3,10 @@
 }
 
 .banerText h1{
-    font-size: 4em;
-    color: #000;
+    font-size: 2.8em;
+    color: #020241;
     font-weight: bold;
     text-align: left;
     margin: 0;
+    line-height: 1.04;
 }

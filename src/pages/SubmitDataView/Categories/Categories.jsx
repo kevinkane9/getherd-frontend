@@ -6,17 +6,17 @@ import TileIcon from './tile.png';
 import TileWhiteIcon from './tilewhite.png';
 
 const Container = styled.div`
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  padding-top: 30px;
+  padding-top: 10px;
   justify-content: center;
   .category {
     border-radius: 28px;
     border: solid 1px #fd7313;
     background-color: rgba(253, 115, 19, 0.08);
-    padding: 8px 20px;
+    padding: 6px 10px;
     font-size: 9px;
     margin: 5px;
     font-weight: 100;
@@ -26,8 +26,8 @@ const Container = styled.div`
     align-items: center;
     img {
       margin-right: 5px;
-      width: 15px;
-      height: 15px;
+      width: 10px;
+      height: 10px;
     }
   }
   .category.active {
